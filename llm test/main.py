@@ -1,7 +1,6 @@
-from langchain_core.prompts import PromptTemplate
 from dotenv import load_dotenv
+from langchain_core.prompts import PromptTemplate
 from langchain_ollama import OllamaLLM
-
 
 load_dotenv()
 
@@ -17,14 +16,16 @@ def main():
 
     summary_prompt = """
     given this information: {information} about the person, I want you to create:
-    1. A short summary.
-    2. two interesting facta about the person.
+    A short summary and two interesting facts about the person.
 """
-    summary_prompt_template = PromptTemplate(input_variables={"information"}, template= summary_prompt)
-    llm = OllamaLLM(model="llama3")
+    summary_prompt_template = PromptTemplate(
+        input_variables={"information"}, template=summary_prompt
+    )
+    llm = OllamaLLM(model="gemma3:270m")
     chain = summary_prompt_template | llm
     resp = chain.invoke(input={"information": information})
     print(resp)
+
 
 if __name__ == "__main__":
     main()
