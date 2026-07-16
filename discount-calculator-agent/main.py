@@ -67,8 +67,7 @@ def main():
         response = tools_model.invoke(chat)
         response_tool_calls = response.tool_calls
         if not response_tool_calls:
-            print("Chat:", chat)
-            print("Response:", response)
+            print("Response:", response.content)
             break
         tool_call = response_tool_calls[0]
         tool = tools_dict.get(tool_call["name"])

@@ -1,0 +1,15 @@
+LangChain is a framework for building LLM applications.
+
+ChromaDB is a lightweight vector database.
+
+Ollama allows running large language models locally.
+
+RAG stands for Retrieval Augmented Generation.
+
+Embeddings convert text into vectors that preserve semantic meaning.
+
+The capital city of France is Paris.
+
+Python is one of the most popular programming languages.
+
+Ashish is learning how Retrieval Augmented Generation works using local AI models.
